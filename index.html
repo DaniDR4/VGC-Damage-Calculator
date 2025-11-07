@@ -16,11 +16,11 @@
 </script>-->
     <head>
         <link rel="icon" type="image/png" href="image_res/Favicon-32px.ico">
-        <link rel="image_src" href="image_res/Logo Nimbasa City Post PNG.png" />
+        <link rel="image_src" href="image_res/logo.png" />
 
-        <meta property="og:title" content="Nimbasa City Post Damage Calculator" />
+        <meta property="og:title" content="Scarlet &amp; Violet Damage Calculator" />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="image_res/Logo Nimbasa City Post PNG.png" />
+        <meta property="og:image" content="image_res/logo.png" />
 
         <meta charset="UTF-8" />
         <title>Pokémon Damage Calculator</title>
@@ -31,24 +31,17 @@
         <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
     </head>
     <body class="dark">
-        <div class="header">
-            <div class="wrapper">
-                <span class="header-logo"><a href="http://nimbasacitypost.com" target="_blank" rel="noopener noreferrer"><img src="image_res/Logo Nimbasa City Post White Text PNG.png" alt="Nimbasa City Post" style="height: 45px;padding-top: 5px;" /></a></span><span class="nav"><a href="http://nimbasacitypost.com" target="_blank" rel="noopener noreferrer">Home</a> | <a href="http://play.pokemonshowdown.com/vgc" target="_blank" rel="noopener noreferrer">Showdown</a> | <a href="https://statcrusher.com/" target="_blank" rel="noopener noreferrer">StatCrusher</a> | <a href="https://docs.google.com/spreadsheets/d/1axlwmzPA49rYkqXh7zHvAtSP-TKbM0ijGYBPRflLSWw" target="_blank" rel="noopener noreferrer">VGCPastes Repository</a> | <a href="https://github.com/nerd-of-now/NCP-VGC-Damage-Calculator" target="_blank" rel="noopener noreferrer">GitHub Page</a> | <a href="https://www.nimbasacitypost.com/2019/12/vgc-resources.html" target="_blank" rel="noopener noreferrer">Other VGC Resources</a><button class="btn" id="switchTheme">Dark theme</button><input class="btn-input" type="checkbox" id="switchDex" /><label class="btn dex-change gen-specific g8 g9" for="switchDex" title="Include Pokémon that aren't in this gen?">National Dex</label><input class="btn-input" type="checkbox" id="toggleCustMods" /><label class="btn dex-change gen-specific g5 g6 g7 g8 g9" for="toggleCustMods" title="Enable custom modifiers? (Technical; intended for mechanics testing)">Custom Mods</label></span>
-                <div style="clear:both"></div>
-            </div>
-        </div>
         <div class="wrapper">
             <section class="hero-banner">
                 <div class="hero-content">
-                    <h1 class="hero-title">VGC 2025: Scarlet &amp; Violet Damage Calculator</h1>
-                    <p class="hero-tagline">Craft game-winning lines faster with a streamlined interface, curated spreads, and full multi-generation support.</p>
-                    <div class="hero-meta">
-                        <span class="hero-meta__item">Maintained by Alex Collins (<a href="https://twitter.com/nerd_of_now">@nerd_of_now</a>)</span>
-                        <span class="hero-meta__item">Original work by Jake White (<a href="https://twitter.com/squirrelboydev" target="_blank" rel="noopener noreferrer">@squirrelboydev</a>)</span>
-                    </div>
-                    <div class="hero-actions">
-                        <a class="hero-action" href="https://github.com/nerd-of-now/NCP-VGC-Damage-Calculator" target="_blank" rel="noopener noreferrer">View on GitHub</a>
-                        <a class="hero-action hero-action--secondary" href="https://docs.google.com/spreadsheets/d/1axlwmzPA49rYkqXh7zHvAtSP-TKbM0ijGYBPRflLSWw" target="_blank" rel="noopener noreferrer">Browse VGCPastes</a>
+                    <h1 class="hero-title">Scarlet &amp; Violet Damage Calculator</h1>
+                    <p class="hero-tagline">A streamlined tool for Regulation play, with quick access to move rolls, field states, and set management.</p>
+                    <div class="hero-switches">
+                        <button class="btn" id="switchTheme">Dark theme</button>
+                        <input class="btn-input" type="checkbox" id="switchDex" />
+                        <label class="btn dex-change gen-specific g8 g9" for="switchDex" title="Include Pokémon that aren't in this gen?">National Dex</label>
+                        <input class="btn-input" type="checkbox" id="toggleCustMods" />
+                        <label class="btn dex-change gen-specific g5 g6 g7 g8 g9" for="toggleCustMods" title="Enable custom modifiers? (Technical; intended for mechanics testing)">Custom Mods</label>
                     </div>
                 </div>
                 <div class="hero-controls">
@@ -68,21 +61,10 @@
             </section>
             <section class="announcement-section">
                 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                <!-- Damage Calc Ad (PROBABLY WILL REMAIN UNUSED) -->
-                <!--<ins class="adsbygoogle"
-             style="display:inline-block;width:728px;height:90px"
-             data-ad-client="ca-pub-7571541875475494"
-             data-ad-slot="3642617298"></ins>
-        <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>-->
                 <div class="announcement-card">
-                    <p>Regulation H is back for official VGC events (Legendary and Paradox Pokémon remain restricted). Dedicated Regulation J sets are ready for Mythical Pokémon.</p>
-                    <!--<br><b><u>This calculator contains spoilers for the Indigo Disk DLC.</u></b> This includes Pokémon, moves, abilities, items, and the new Tera Type. Use at your own discretion.-->
-                    <!--<br><p>Is there an important or relevant set missing? <a href="https://forms.gle/zBbEnvp2vZ2UADUJA" target="_blank" rel="noopener noreferrer">Give us your suggestion!</a></p>-->
-                    <p>If you have feedback or spot a bug, reach out on <a href="https://github.com/nerd-of-now/NCP-VGC-Damage-Calculator/issues" target="_blank" rel="noopener noreferrer">GitHub</a>, <a href="https://bsky.app/profile/nerdofnow.bsky.social" target="_blank" rel="noopener noreferrer">Bluesky</a>, or <a href="https://twitter.com/nerd_of_now" target="_blank" rel="noopener noreferrer">X (Twitter)</a>.</p>
+                    <p>Coverage includes the latest Regulation rule sets for Scarlet &amp; Violet, with support for all official field effects and modifiers.</p>
+                    <p>Use the toggles above to switch between regional dex availability or to enable custom modifier testing.</p>
                 </div>
-                <p class="announcement-note">VGC 2025 upkeep by Alex Collins · Calculator foundations by Jake White.</p>
             </section>
             <!-- GEN 7 SET TEMP -->
             <p class="hide gen-specific g7">
@@ -91,40 +73,32 @@
             </p>
 
             <section class="calc-grid">
-                <div class="move-result-group results-card" title="Select a move to show detailed results.">
-                    <header class="results-card__header">
-                        <h2>Damage Preview</h2>
-                        <p>Click a move below to see the full roll breakdown.</p>
-                    </header>
-                    <div class="results-card__columns">
-                        <div class="move-result-subgroup results-card__column">
-                            <div class="result-move-header"><span id="resultHeaderL">Pokémon 1's Moves (select one to show detailed results)</span></div>
-                            <div><input class="result-move btn-input" type="radio" name="resultMove" id="resultMoveL1" checked="checked" /><label class="btn btn-xxxwide btn-top" for="resultMoveL1">Hi Jump Kick</label> <span id="resultDamageL1">??? - ???%</span></div>
-                            <div><input class="result-move btn-input" type="radio" name="resultMove" id="resultMoveL2" /><label class="btn btn-xxxwide btn-mid" for="resultMoveL2">Falcon Punch</label> <span id="resultDamageL2">??? - ???%</span></div>
-                            <div><input class="result-move btn-input" type="radio" name="resultMove" id="resultMoveL3" /><label class="btn btn-xxxwide btn-mid" for="resultMoveL3">Suspicious Odor</label> <span id="resultDamageL3">??? - ???%</span></div>
-                            <div><input class="result-move btn-input" type="radio" name="resultMove" id="resultMoveL4" /><label class="btn btn-xxxwide btn-bottom" for="resultMoveL4">Tombstoner</label> <span id="resultDamageL4">??? - ???%</span></div>
-                        </div>
-                        <div class="move-result-subgroup results-card__column">
-                            <div class="result-move-header"><span id="resultHeaderR">Pokémon 2's Moves (select one to show detailed results)</span></div>
-                            <div><input class="result-move btn-input" type="radio" name="resultMove" id="resultMoveR1" /><label class="btn btn-xxxwide btn-top" for="resultMoveR1">Hi Jump Kick</label> <span id="resultDamageR1">??? - ???%</span></div>
-                            <div><input class="result-move btn-input" type="radio" name="resultMove" id="resultMoveR2" /><label class="btn btn-xxxwide btn-mid" for="resultMoveR2">Falcon Punch</label> <span id="resultDamageR2">??? - ???%</span></div>
-                            <div><input class="result-move btn-input" type="radio" name="resultMove" id="resultMoveR3" /><label class="btn btn-xxxwide btn-mid" for="resultMoveR3">Suspicious Odor</label> <span id="resultDamageR3">??? - ???%</span></div>
-                            <div><input class="result-move btn-input" type="radio" name="resultMove" id="resultMoveR4" /><label class="btn btn-xxxwide btn-bottom" for="resultMoveR4">Tombstoner</label> <span id="resultDamageR4">??? - ???%</span></div>
-                        </div>
+                <div class="move-result-group" title="Select a move to show detailed results.">
+                    <div class="move-result-subgroup">
+                        <div class="result-move-header"><span id="resultHeaderL">Pokémon 1's Moves (select one to show detailed results)</span></div>
+                        <div><input class="result-move btn-input" type="radio" name="resultMove" id="resultMoveL1" checked="checked" /><label class="btn btn-xxxwide btn-top" for="resultMoveL1">Hi Jump Kick</label> <span id="resultDamageL1">??? - ???%</span></div>
+                        <div><input class="result-move btn-input" type="radio" name="resultMove" id="resultMoveL2" /><label class="btn btn-xxxwide btn-mid" for="resultMoveL2">Falcon Punch</label> <span id="resultDamageL2">??? - ???%</span></div>
+                        <div><input class="result-move btn-input" type="radio" name="resultMove" id="resultMoveL3" /><label class="btn btn-xxxwide btn-mid" for="resultMoveL3">Suspicious Odor</label> <span id="resultDamageL3">??? - ???%</span></div>
+                        <div><input class="result-move btn-input" type="radio" name="resultMove" id="resultMoveL4" /><label class="btn btn-xxxwide btn-bottom" for="resultMoveL4">Tombstoner</label> <span id="resultDamageL4">??? - ???%</span></div>
+                    </div>
+                    <div class="move-result-subgroup">
+                        <div class="result-move-header"><span id="resultHeaderR">Pokémon 2's Moves (select one to show detailed results)</span></div>
+                        <div><input class="result-move btn-input" type="radio" name="resultMove" id="resultMoveR1" /><label class="btn btn-xxxwide btn-top" for="resultMoveR1">Hi Jump Kick</label> <span id="resultDamageR1">??? - ???%</span></div>
+                        <div><input class="result-move btn-input" type="radio" name="resultMove" id="resultMoveR2" /><label class="btn btn-xxxwide btn-mid" for="resultMoveR2">Falcon Punch</label> <span id="resultDamageR2">??? - ???%</span></div>
+                        <div><input class="result-move btn-input" type="radio" name="resultMove" id="resultMoveR3" /><label class="btn btn-xxxwide btn-mid" for="resultMoveR3">Suspicious Odor</label> <span id="resultDamageR3">??? - ???%</span></div>
+                        <div><input class="result-move btn-input" type="radio" name="resultMove" id="resultMoveR4" /><label class="btn btn-xxxwide btn-bottom" for="resultMoveR4">Tombstoner</label> <span id="resultDamageR4">??? - ???%</span></div>
                     </div>
                 </div>
-                <div class="main-result-group result-summary">
-                    <div class="result-summary__card">
-                        <h2 class="result-summary__title">Result Details</h2>
-                        <div class="big-text result-summary__headline"><span id="mainResult" onclick="Clipboard_CopyTo(this.textContent)" title="Click to copy the result.">Loading...</span></div>
-                        <div class="small-text result-summary__meta">
-                            <span id="damageValues">(If you see this message for more than a few seconds, try enabling JavaScript. If you have that enabled, try deleting your cookies. Otherwise, I won't be able to help you unless you send a screenshot of your browser console [Ctrl+Shift+I on Google Chrome].)</span>
-                            <br />
-                            <span id="customModValues" style="display: none;">(If this is seen then I think I did something wrong)</span>
-                        </div>
+                <div class="main-result-group">
+                    <div class="big-text"><span id="mainResult" onclick="Clipboard_CopyTo(this.textContent)" title="Click to copy the result.">Loading...</span></div>
+                    <div class="small-text">
+                        <span id="damageValues">(If you see this message for more than a few seconds, try enabling JavaScript. If you have that enabled, try deleting your cookies. Otherwise, I won't be able to help you unless you send a screenshot of your browser console [Ctrl+Shift+I on Google Chrome].)</span>
+                        <br />
+                        <span id="customModValues" style="display: none;">(If this is seen then I think I did something wrong)</span>
                     </div>
                 </div>
-                <div class="panel poke-info" id="p1">
+                <div class="calc-panels">
+                    <div class="panel poke-info" id="p1">
                 <div class="panel-heading"><h4 class="panel-title">Pokémon 1</h4></div>
                 <div class="panel-body">
                     <input type="text" class="set-selector calc-trigger" />&nbsp;&nbsp;
@@ -780,9 +754,10 @@
                     </div>
                 </div>
             </div>
+                </div>
             </section>
             <div class="footer">
-                <p><em>This calculator is based on the work of Tapin, Firestorm, squirrelboy1225, and DaWoblefet, whose work was in turn based on the work of Honko, gamut, and Zarel. It has been optimized for players in the current Pokémon Video Game Championship Series by nerd of now. <br />Many thanks to Nugget Bridge and Trainer Tower for hosting previous incarnations of this calculator in the past.</em></p>
+                <p><em>This calculator builds on years of community-driven research into Pokémon mechanics and damage formulas. Thank you to everyone who continues to document and share competitive discoveries.</em></p>
             </div>
             <div id="april_fools"></div>
             <button title="Say, what's this?" style="background: transparent; border: none !important; cursor:pointer; position: absolute; right: 0px; padding: 7px 8px" onclick="toggleAFD()">&nbsp;&nbsp;&nbsp;</button>
