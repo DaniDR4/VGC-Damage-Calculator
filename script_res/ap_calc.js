@@ -2288,10 +2288,46 @@ function setStartup(p) {
 
 function resetSetSelectors() {
     calcQueue++;
-    $("#p1 .set-selector").val(getSetOptions("#p1")[gen > 3 ? 1 : gen === 1 ? 5 : 3].id);
+    var leftDefaultId = "Flutter Mane (Bulky Speed Booster Energy)";
+    var leftOptions = getSetOptions("#p1");
+    var leftIdx = gen > 3 ? 1 : gen === 1 ? 5 : 3;
+    var leftId = leftOptions[leftIdx] ? leftOptions[leftIdx].id : undefined;
+    for (var i = 0, n = leftOptions.length; i < n; i++) {
+        if (leftOptions[i].id && leftOptions[i].id === leftDefaultId) {
+            leftId = leftOptions[i].id;
+            break;
+        }
+    }
+    if (!leftId) {
+        for (var i2 = 0, n2 = leftOptions.length; i2 < n2; i2++) {
+            if (leftOptions[i2].id) {
+                leftId = leftOptions[i2].id;
+                break;
+            }
+        }
+    }
+    $("#p1 .set-selector").val(leftId);
     $("#p1 .set-selector").change();
     calcQueue--;
-    $("#p2 .set-selector").val(getSetOptions("#p2")[gen > 3 ? 1 : gen === 1 ? 5 : 3].id);
+    var rightDefaultId = "Iron Hands (Tera Water Assault Vest)";
+    var rightOptions = getSetOptions("#p2");
+    var rightIdx = gen > 3 ? 1 : gen === 1 ? 5 : 3;
+    var rightId = rightOptions[rightIdx] ? rightOptions[rightIdx].id : undefined;
+    for (var j = 0, m = rightOptions.length; j < m; j++) {
+        if (rightOptions[j].id && rightOptions[j].id === rightDefaultId) {
+            rightId = rightOptions[j].id;
+            break;
+        }
+    }
+    if (!rightId) {
+        for (var j2 = 0, m2 = rightOptions.length; j2 < m2; j2++) {
+            if (rightOptions[j2].id) {
+                rightId = rightOptions[j2].id;
+                break;
+            }
+        }
+    }
+    $("#p2 .set-selector").val(rightId);
     $("#p2 .set-selector").change();
 }
 

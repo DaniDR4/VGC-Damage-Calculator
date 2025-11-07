@@ -15,9 +15,8 @@
     --calc-body-bg: radial-gradient(circle at 12% 20%, rgba(255, 205, 87, 0.18) 0, rgba(255, 205, 87, 0) 45%), radial-gradient(circle at 88% 12%, rgba(59, 76, 202, 0.18) 0, rgba(59, 76, 202, 0) 42%), linear-gradient(180deg, #fdfdff 0%, #f6f8ff 45%, #ffffff 100%);
 }
 
-#switchTheme, #switchDex, .dex-change{
-	margin-left : 90px;
-	width: 100px;
+#switchTheme {
+    width: auto;
 }
 
 body.dark, html.dark {
@@ -287,46 +286,16 @@ h1 a {
     position: relative;
     display: flex;
     flex-wrap: wrap;
-    gap: 2.5rem;
-    align-items: stretch;
+    align-items: flex-start;
     justify-content: space-between;
-    margin: 2.5rem 0 2rem;
-    padding: 2.75rem 3rem;
-    border-radius: 28px;
-    background: linear-gradient(135deg, rgba(59, 76, 202, 0.92), rgba(255, 77, 79, 0.88));
-    color: #ffffff;
-    overflow: hidden;
-    box-shadow: 0 30px 60px rgba(59, 76, 202, 0.25);
-}
-
-.hero-banner::before {
-    content: "";
-    position: absolute;
-    top: -70px;
-    right: -80px;
-    width: 320px;
-    height: 320px;
-    border-radius: 50%;
-    background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.85) 0%, rgba(226, 226, 226, 0.85) 48%, rgba(16, 16, 16, 0.85) 52%, rgba(8, 8, 8, 0.9) 100%),
-        radial-gradient(circle at center, rgba(255, 255, 255, 0.65) 0%, rgba(255, 255, 255, 0.05) 46%, rgba(0, 0, 0, 0.25) 47%, rgba(0, 0, 0, 0.45) 54%, rgba(0, 0, 0, 0) 55%);
-    border: 10px solid rgba(255, 255, 255, 0.78);
-    opacity: 0.3;
-    pointer-events: none;
-}
-
-.hero-banner::after {
-    content: "";
-    position: absolute;
-    bottom: -120px;
-    left: -60px;
-    width: 220px;
-    height: 220px;
-    border-radius: 50%;
-    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0) 70%);
-    box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.14);
-    opacity: 0.35;
-    pointer-events: none;
+    gap: 1.5rem;
+    margin: 1.25rem 0 1.5rem;
+    padding: 1.25rem 1.75rem;
+    border-radius: 18px;
+    background: var(--calc-surface);
+    color: var(--calc-text-primary);
+    border: 1px solid var(--calc-border);
+    box-shadow: 0 14px 32px rgba(15, 23, 42, 0.08);
 }
 
 .hero-content {
@@ -355,7 +324,8 @@ h1 a {
     display: flex;
     flex-wrap: wrap;
     gap: 0.6rem;
-    margin-top: 1.5rem;
+    margin-top: 0.25rem;
+    justify-content: flex-end;
 }
 
 .hero-switches .btn,
@@ -388,17 +358,10 @@ h1 a {
 
 .hero-controls {
     flex: 0 1 320px;
-    max-width: 360px;
+    max-width: 320px;
     display: flex;
     flex-direction: column;
-    gap: 1.45rem;
-    padding: 2rem 1.75rem;
-    border-radius: 22px;
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    background: rgba(8, 11, 37, 0.45);
-    backdrop-filter: blur(14px);
-    position: relative;
-    z-index: 1;
+    gap: 1rem;
 }
 
 .hero-subtitle {
@@ -415,9 +378,9 @@ h1 a {
     gap: 0.35rem;
     padding: 1.4rem 1.2rem;
     border-radius: 18px;
-    background: rgba(9, 13, 40, 0.55);
-    border: 1px solid rgba(255, 255, 255, 0.22);
-    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12);
+    background: var(--calc-surface-soft);
+    border: 1px solid var(--calc-border);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.4);
 }
 
 .hero-generation-label {
@@ -434,8 +397,8 @@ h1 a {
     font-size: 0.85rem;
     font-weight: 700;
     letter-spacing: 0.08em;
-    background: rgba(255, 255, 255, 0.18);
-    border: 1px solid rgba(255, 255, 255, 0.26);
+    background: rgba(59, 76, 202, 0.12);
+    border: 1px solid rgba(59, 76, 202, 0.35);
 }
 
 .hero-badges {
@@ -453,8 +416,8 @@ h1 a {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.045em;
-    background: rgba(255, 255, 255, 0.22);
-    border: 1px solid rgba(255, 255, 255, 0.32);
+    background: rgba(59, 76, 202, 0.12);
+    border: 1px solid rgba(59, 76, 202, 0.35);
 }
 
 .announcement-section {
@@ -492,7 +455,7 @@ h1 a {
     display: flex;
     flex-direction: column;
     gap: 1.75rem;
-    margin: 2rem 0 3rem;
+    margin: 1rem 0 3rem;
 }
 
 .calc-panels {
@@ -503,7 +466,7 @@ h1 a {
 }
 
 .calc-panels > .panel {
-    flex: 1 1 0;
+    flex: 1 1 32%;
     min-width: 320px;
 }
 
@@ -511,6 +474,11 @@ h1 a {
     display: flex;
     flex-wrap: wrap;
     gap: 1.5rem;
+    background: var(--calc-surface);
+    border: 1px solid var(--calc-border);
+    border-radius: 18px;
+    padding: 1.5rem;
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
 }
 
 .move-result-group .move-result-subgroup {
@@ -530,6 +498,112 @@ h1 a {
     text-align: right;
     font-weight: 600;
     color: var(--calc-text-primary);
+}
+
+.move-result-group .btn {
+    border-radius: 12px;
+    background: rgba(59, 76, 202, 0.08);
+    border: 1px solid rgba(59, 76, 202, 0.18);
+    color: var(--calc-text-primary);
+    padding: 0.6rem 0.9rem;
+    font-weight: 600;
+    text-transform: none;
+    box-shadow: none;
+}
+
+.move-result-group .btn-input:checked + .btn {
+    background: linear-gradient(135deg, rgba(59, 76, 202, 0.22), rgba(255, 77, 79, 0.22));
+    border-color: rgba(59, 76, 202, 0.45);
+    color: var(--poke-dark);
+    box-shadow: 0 10px 24px rgba(59, 76, 202, 0.18);
+}
+
+.main-result-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    background: var(--calc-surface-soft);
+    border: 1px solid var(--calc-border);
+    border-radius: 18px;
+    padding: 1.5rem;
+    box-shadow: 0 14px 34px rgba(15, 23, 42, 0.06);
+}
+
+.main-result-group .big-text {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: var(--poke-blue);
+    text-shadow: 0 14px 22px rgba(59, 76, 202, 0.22);
+}
+
+.main-result-group .small-text {
+    color: var(--calc-text-muted);
+    line-height: 1.6;
+}
+
+.poke-info input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
+.field-info input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
+.poke-info select,
+.field-info select,
+.select2-container .select2-choice {
+    border-radius: 12px;
+    border: 1px solid var(--calc-border);
+    background: var(--calc-surface-soft);
+    color: var(--calc-text-primary);
+    padding: 0.4rem 0.65rem;
+    box-shadow: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.poke-info input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):focus,
+.field-info input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):focus,
+.poke-info select:focus,
+.field-info select:focus,
+.select2-container .select2-choice:focus {
+    border-color: rgba(59, 76, 202, 0.55);
+    box-shadow: 0 0 0 3px rgba(59, 76, 202, 0.12);
+    outline: none;
+}
+
+.select2-container .select2-choice {
+    height: auto;
+    line-height: 1.4;
+}
+
+.select2-container .select2-choice > .select2-chosen {
+    margin-right: 1.6rem;
+}
+
+.select2-container .select2-choice .select2-arrow {
+    background: transparent;
+    border-left: none;
+    right: 0.6rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.select2-drop {
+    border-radius: 14px;
+    border: 1px solid var(--calc-border);
+    background: var(--calc-surface);
+    box-shadow: 0 18px 36px rgba(15, 23, 42, 0.15);
+}
+
+.select2-results .select2-result-label {
+    padding: 0.45rem 0.75rem;
+}
+
+.select2-results .select2-highlighted {
+    background: rgba(59, 76, 202, 0.12);
+    color: var(--calc-text-primary);
+}
+
+.select2-search input {
+    border-radius: 10px !important;
+    border: 1px solid var(--calc-border) !important;
+    padding: 0.4rem 0.65rem !important;
+    background: var(--calc-surface-soft) !important;
+    color: var(--calc-text-primary) !important;
 }
 
 .result-move-header {
@@ -656,26 +730,85 @@ h1 a {
 }
 
 .dark .hero-banner {
-    box-shadow: 0 30px 60px rgba(12, 20, 40, 0.45);
+    background: rgba(12, 18, 45, 0.85);
+    border-color: rgba(120, 152, 255, 0.22);
+    box-shadow: 0 26px 48px rgba(5, 10, 24, 0.55);
 }
 
 .dark .hero-controls {
-    background: rgba(10, 15, 35, 0.6);
+    background: transparent;
 }
 
 .dark .hero-generation-card {
-    background: rgba(12, 18, 45, 0.75);
+    background: rgba(16, 24, 52, 0.88);
     border-color: rgba(120, 152, 255, 0.28);
-    box-shadow: inset 0 0 0 1px rgba(120, 152, 255, 0.12);
+    box-shadow: inset 0 0 0 1px rgba(120, 152, 255, 0.18);
 }
 
 .dark .hero-generation-badge {
-    background: rgba(120, 152, 255, 0.18);
-    border-color: rgba(120, 152, 255, 0.32);
+    background: rgba(120, 152, 255, 0.22);
+    border-color: rgba(120, 152, 255, 0.35);
 }
 
 .dark .announcement-card a {
     color: #8fb4ff;
+}
+
+.dark .move-result-group {
+    background: rgba(16, 24, 52, 0.88);
+    border-color: rgba(120, 152, 255, 0.24);
+    box-shadow: 0 26px 48px rgba(5, 10, 24, 0.55);
+}
+
+.dark .main-result-group {
+    background: rgba(12, 18, 45, 0.82);
+    border-color: rgba(120, 152, 255, 0.22);
+    box-shadow: 0 24px 42px rgba(5, 10, 24, 0.5);
+}
+
+.dark .main-result-group .big-text {
+    color: #9fb3ff;
+    text-shadow: 0 18px 32px rgba(73, 99, 191, 0.35);
+}
+
+.dark .move-result-group .btn {
+    background: rgba(120, 152, 255, 0.12);
+    border-color: rgba(120, 152, 255, 0.25);
+    color: #eaf0ff;
+}
+
+.dark .move-result-group .btn-input:checked + .btn {
+    background: linear-gradient(135deg, rgba(120, 152, 255, 0.28), rgba(255, 166, 99, 0.24));
+    border-color: rgba(120, 152, 255, 0.45);
+    color: #11152b;
+    box-shadow: 0 12px 26px rgba(120, 152, 255, 0.28);
+}
+
+.dark .poke-info input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
+.dark .field-info input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
+.dark .poke-info select,
+.dark .field-info select,
+.dark .select2-container .select2-choice {
+    background: rgba(18, 26, 58, 0.85);
+    border-color: rgba(120, 152, 255, 0.32);
+    color: #eaf0ff;
+}
+
+.dark .select2-drop {
+    background: rgba(18, 26, 58, 0.95);
+    border-color: rgba(120, 152, 255, 0.28);
+    box-shadow: 0 22px 44px rgba(5, 10, 24, 0.6);
+}
+
+.dark .select2-results .select2-highlighted {
+    background: rgba(120, 152, 255, 0.22);
+    color: #eaf0ff;
+}
+
+.dark .select2-search input {
+    background: rgba(12, 18, 45, 0.85) !important;
+    border-color: rgba(120, 152, 255, 0.28) !important;
+    color: #eaf0ff !important;
 }
 
 .dark .calc-grid .panel,
