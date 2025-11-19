@@ -4,16 +4,10 @@ var COMPONENTS = {
     2: [],
     3: [],
     4: [],
-    5: [SETDEX_GEN5],
-    6: [SETDEX_SHOWDOWN,
-        SETDEX_NUGGETBRIDGE],
-    7: [SETDEX_GEN7],
-    //Gen 8 onwards doesn't need to be updated
-    8: [SETDEX_VGC2022_S13,
-        SETDEX_VGC2022,
-        SETDEX_VGC2021,
-        SETDEX_VGC2021_S10,
-        SETDEX_VGC_BFD],
+    5: [],
+    6: [],
+    7: [],
+    8: [],
     9: [SETDEX_GEN9],
 };
 

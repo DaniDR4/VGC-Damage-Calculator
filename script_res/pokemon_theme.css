@@ -1,0 +1,224 @@
+/* Pokemon Theme - Inspired by Scarlet/Violet and modern Pokemon UI */
+
+:root {
+    --pk-scarlet: #EE4035;
+    --pk-violet: #822DB2;
+    --pk-dark: #2D2D2D;
+    --pk-light: #F5F5F5;
+    --pk-white: #FFFFFF;
+    --pk-gray: #E0E0E0;
+    --pk-text: #333333;
+    --pk-text-light: #FFFFFF;
+    --pk-accent: #FFCB05; /* Pokemon Yellow */
+    --pk-danger: #FF0000;
+    --pk-success: #4CAF50;
+    
+    --pk-font-stack: 'Open Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+    --pk-radius: 16px;
+    --pk-radius-sm: 8px;
+    --pk-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    --pk-shadow-hover: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+body {
+    font-family: var(--pk-font-stack);
+    background-color: var(--pk-light);
+    color: var(--pk-text);
+    margin: 0;
+    padding: 20px;
+    background-image: url('data:image/svg+xml;utf8,<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><circle cx="2" cy="2" r="2" fill="%23e0e0e0"/></svg>');
+}
+
+/* Header / Hero */
+.hero-banner {
+    background: linear-gradient(135deg, var(--pk-scarlet), var(--pk-violet));
+    color: var(--pk-white);
+    border-radius: var(--pk-radius);
+    padding: 2rem;
+    box-shadow: var(--pk-shadow);
+    margin-bottom: 2rem;
+    border: 4px solid rgba(255,255,255,0.2);
+}
+
+.hero-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 0px rgba(0,0,0,0.2);
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    margin-top: 0.5rem;
+}
+
+/* Panels */
+.panel {
+    background: var(--pk-white);
+    border-radius: var(--pk-radius);
+    box-shadow: var(--pk-shadow);
+    border: none;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    transition: transform 0.2s;
+}
+
+.panel:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--pk-shadow-hover);
+}
+
+.panel-heading {
+    background: var(--pk-dark);
+    color: var(--pk-white);
+    padding: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 4px solid var(--pk-accent);
+}
+
+.panel-title {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.panel-body {
+    padding: 1.5rem;
+}
+
+/* Inputs & Selects */
+input[type="text"], input[type="number"], select {
+    background: var(--pk-light);
+    border: 2px solid var(--pk-gray);
+    border-radius: var(--pk-radius-sm);
+    padding: 8px 12px;
+    font-family: var(--pk-font-stack);
+    transition: border-color 0.2s;
+}
+
+input[type="text"]:focus, input[type="number"]:focus, select:focus {
+    border-color: var(--pk-violet);
+    outline: none;
+}
+
+/* Buttons */
+.btn {
+    background: var(--pk-dark);
+    color: var(--pk-white);
+    border: none;
+    border-radius: 20px;
+    padding: 8px 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.btn:hover {
+    background: var(--pk-violet);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.btn-input:checked + .btn {
+    background: var(--pk-scarlet);
+    color: var(--pk-white);
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Move Results */
+.move-result-group {
+    background: var(--pk-white);
+    border-radius: var(--pk-radius);
+    padding: 1.5rem;
+    box-shadow: var(--pk-shadow);
+    border: 2px solid var(--pk-gray);
+}
+
+.result-move-header {
+    color: var(--pk-violet);
+    font-weight: 800;
+    text-transform: uppercase;
+    border-bottom: 2px solid var(--pk-gray);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Main Result */
+.main-result-group {
+    background: linear-gradient(to right, #f8f9fa, #e9ecef);
+    border-left: 6px solid var(--pk-scarlet);
+    border-radius: var(--pk-radius-sm);
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.big-text {
+    color: var(--pk-dark);
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+/* HP Bar */
+.hp-bar {
+    height: 12px;
+    border-radius: 6px;
+    background: #e0e0e0;
+    border: 1px solid #ccc;
+}
+
+/* Dark Mode Overrides */
+body.dark {
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+    background-image: url('data:image/svg+xml;utf8,<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><circle cx="2" cy="2" r="2" fill="%23333"/></svg>');
+}
+
+body.dark .panel {
+    background: #2d2d2d;
+    color: #f0f0f0;
+}
+
+body.dark .panel-heading {
+    background: #111;
+    border-bottom-color: var(--pk-violet);
+}
+
+body.dark input[type="text"], body.dark input[type="number"], body.dark select {
+    background: #333;
+    border-color: #444;
+    color: #fff;
+}
+
+body.dark .move-result-group {
+    background: #2d2d2d;
+    border-color: #444;
+}
+
+body.dark .main-result-group {
+    background: linear-gradient(to right, #2d2d2d, #222);
+    border-left-color: var(--pk-violet);
+}
+
+body.dark .big-text {
+    color: #fff;
+}
+
+/* Specific Pokemon Type Colors (Optional, can be expanded) */
+.type-fire { color: #EE8130; }
+.type-water { color: #6390F0; }
+.type-grass { color: #7AC74C; }
+/* ... etc */
+
+/* Utility Classes */
+.text-center { text-align: center; }
+.mt-2 { margin-top: 1rem; }
+.mb-2 { margin-bottom: 1rem; }
+
+/* Hide unwanted elements */
+.hide { display: none !important; }
