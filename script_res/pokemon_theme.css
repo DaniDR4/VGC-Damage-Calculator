@@ -1,224 +1,333 @@
-/* Pokemon Theme - Inspired by Scarlet/Violet and modern Pokemon UI */
-
+/* Pokemon Champions Theme */
 :root {
-    --pk-scarlet: #EE4035;
-    --pk-violet: #822DB2;
-    --pk-dark: #2D2D2D;
-    --pk-light: #F5F5F5;
-    --pk-white: #FFFFFF;
-    --pk-gray: #E0E0E0;
-    --pk-text: #333333;
-    --pk-text-light: #FFFFFF;
-    --pk-accent: #FFCB05; /* Pokemon Yellow */
-    --pk-danger: #FF0000;
-    --pk-success: #4CAF50;
-    
-    --pk-font-stack: 'Open Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    
-    --pk-radius: 16px;
-    --pk-radius-sm: 8px;
-    --pk-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    --pk-shadow-hover: 0 6px 12px rgba(0,0,0,0.15);
+    /* Core Palette - Champions Gold & Royal Purple */
+    --champ-gold: #FFD700;
+    --champ-gold-dark: #B8860B;
+    --champ-purple: #4B0082;
+    --champ-purple-light: #6A0DAD;
+    --champ-dark: #1a1a1a;
+    --champ-dark-surface: #2d2d2d;
+    --champ-light: #f5f5f5;
+    --champ-white: #ffffff;
+
+    /* Type Colors (Vibrant) */
+    --type-fire: #FF4422;
+    --type-water: #3399FF;
+    --type-grass: #77CC55;
+    --type-electric: #FFCC33;
+    --type-psychic: #FF5599;
+    --type-ice: #66CCFF;
+    --type-dragon: #7766EE;
+    --type-dark: #705848;
+    --type-fairy: #EE99EE;
+    --type-normal: #AAAA99;
+    --type-fighting: #BB5544;
+    --type-flying: #8899FF;
+    --type-poison: #AA5599;
+    --type-ground: #DDBB55;
+    --type-rock: #BBAA66;
+    --type-bug: #AABB22;
+    --type-ghost: #6666BB;
+    --type-steel: #AAAABB;
+
+    /* Functional Colors */
+    --text-main: #333333;
+    --text-inverted: #ffffff;
+    --text-muted: #888888;
+    --border-color: #e0e0e0;
+    --success: #4CAF50;
+    --danger: #FF5252;
+
+    /* Spacing & Radius */
+    --radius-lg: 16px;
+    --radius-md: 8px;
+    --radius-sm: 4px;
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+
+    /* Effects */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.12);
+    --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.15);
+    --glass-bg: rgba(255, 255, 255, 0.85);
+    --glass-border: 1px solid rgba(255, 255, 255, 0.3);
+    --backdrop-blur: blur(10px);
 }
 
 body {
-    font-family: var(--pk-font-stack);
-    background-color: var(--pk-light);
-    color: var(--pk-text);
+    font-family: 'Inter', 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: var(--text-main);
     margin: 0;
-    padding: 20px;
-    background-image: url('data:image/svg+xml;utf8,<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><circle cx="2" cy="2" r="2" fill="%23e0e0e0"/></svg>');
+    padding: 0;
+    min-height: 100vh;
 }
 
-/* Header / Hero */
+/* Dark Mode Defaults for Body (since theme is dark by default) */
+body.dark {
+    --text-main: #f0f0f0;
+    --glass-bg: rgba(30, 30, 30, 0.85);
+    --border-color: #444;
+}
+
+.wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: var(--spacing-md);
+}
+
+/* Header */
 .hero-banner {
-    background: linear-gradient(135deg, var(--pk-scarlet), var(--pk-violet));
-    color: var(--pk-white);
-    border-radius: var(--pk-radius);
-    padding: 2rem;
-    box-shadow: var(--pk-shadow);
-    margin-bottom: 2rem;
-    border: 4px solid rgba(255,255,255,0.2);
+    background: linear-gradient(135deg, var(--champ-purple), var(--champ-purple-light));
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+    box-shadow: var(--shadow-lg);
+    color: var(--text-inverted);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hero-banner::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, var(--champ-gold) 0%, transparent 70%);
+    opacity: 0.2;
+    filter: blur(40px);
 }
 
 .hero-title {
     font-size: 2.5rem;
-    font-weight: 800;
+    font-weight: 900;
+    margin: 0;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    text-shadow: 2px 2px 0px rgba(0,0,0,0.2);
+    letter-spacing: 2px;
+    background: linear-gradient(to right, #fff, #ffd700);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
-.hero-subtitle {
-    font-size: 1.2rem;
+.hero-tagline {
+    font-size: 1.1rem;
     opacity: 0.9;
-    margin-top: 0.5rem;
+    margin-top: var(--spacing-sm);
+}
+
+/* Controls in Header */
+.hero-controls {
+    margin-top: var(--spacing-md);
+    display: flex;
+    gap: var(--spacing-md);
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--text-inverted);
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.btn:hover {
+    background: var(--champ-gold);
+    color: var(--champ-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
+}
+
+/* Main Grid Layout */
+.calc-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-lg);
+}
+
+@media (max-width: 1024px) {
+    .calc-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* Panels */
 .panel {
-    background: var(--pk-white);
-    border-radius: var(--pk-radius);
-    box-shadow: var(--pk-shadow);
-    border: none;
+    background: var(--glass-bg);
+    backdrop-filter: var(--backdrop-blur);
+    border-radius: var(--radius-lg);
+    border: var(--glass-border);
+    box-shadow: var(--shadow-md);
     overflow: hidden;
-    margin-bottom: 1.5rem;
-    transition: transform 0.2s;
-}
-
-.panel:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--pk-shadow-hover);
+    margin-bottom: var(--spacing-md);
 }
 
 .panel-heading {
-    background: var(--pk-dark);
-    color: var(--pk-white);
-    padding: 1rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border-bottom: 4px solid var(--pk-accent);
+    background: rgba(0, 0, 0, 0.05);
+    padding: var(--spacing-md);
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .panel-title {
     margin: 0;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--champ-gold);
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .panel-body {
-    padding: 1.5rem;
+    padding: var(--spacing-md);
 }
 
-/* Inputs & Selects */
-input[type="text"], input[type="number"], select {
-    background: var(--pk-light);
-    border: 2px solid var(--pk-gray);
-    border-radius: var(--pk-radius-sm);
+/* Inputs */
+input[type="text"],
+input[type="number"],
+select {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
     padding: 8px 12px;
-    font-family: var(--pk-font-stack);
-    transition: border-color 0.2s;
-}
-
-input[type="text"]:focus, input[type="number"]:focus, select:focus {
-    border-color: var(--pk-violet);
-    outline: none;
-}
-
-/* Buttons */
-.btn {
-    background: var(--pk-dark);
-    color: var(--pk-white);
-    border: none;
-    border-radius: 20px;
-    padding: 8px 16px;
-    font-weight: bold;
-    text-transform: uppercase;
-    cursor: pointer;
+    border-radius: var(--radius-md);
+    font-family: inherit;
     transition: all 0.2s;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    width: 100%;
+    box-sizing: border-box;
 }
 
-.btn:hover {
-    background: var(--pk-violet);
-    transform: translateY(-1px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus {
+    border-color: var(--champ-gold);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.2);
+    background: rgba(0, 0, 0, 0.3);
 }
 
-.btn-input:checked + .btn {
-    background: var(--pk-scarlet);
-    color: var(--pk-white);
-    box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+/* Pokemon Info Grid */
+.info-group {
+    margin-bottom: var(--spacing-md);
 }
 
-/* Move Results */
+/* Stats Table Replacement Styles */
+.stats-grid {
+    display: grid;
+    grid-template-columns: auto 60px 60px 60px 40px 50px;
+    gap: var(--spacing-sm);
+    align-items: center;
+}
+
+.stat-row {
+    display: contents;
+}
+
+.stat-label {
+    font-weight: 600;
+    color: var(--text-muted);
+}
+
+/* Move Selectors */
+.move-row {
+    display: grid;
+    grid-template-columns: 2fr 60px 1fr 1fr auto;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+    align-items: center;
+}
+
+/* Results Section */
 .move-result-group {
-    background: var(--pk-white);
-    border-radius: var(--pk-radius);
-    padding: 1.5rem;
-    box-shadow: var(--pk-shadow);
-    border: 2px solid var(--pk-gray);
+    grid-column: 1 / -1;
+    background: linear-gradient(to right, rgba(75, 0, 130, 0.1), rgba(0, 0, 0, 0));
+    border-left: 4px solid var(--champ-purple);
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+    border-radius: var(--radius-md);
 }
 
-.result-move-header {
-    color: var(--pk-violet);
-    font-weight: 800;
-    text-transform: uppercase;
-    border-bottom: 2px solid var(--pk-gray);
-    padding-bottom: 0.5rem;
-    margin-bottom: 1rem;
-}
-
-/* Main Result */
 .main-result-group {
-    background: linear-gradient(to right, #f8f9fa, #e9ecef);
-    border-left: 6px solid var(--pk-scarlet);
-    border-radius: var(--pk-radius-sm);
-    padding: 1.5rem;
-    margin: 1.5rem 0;
+    text-align: center;
+    padding: var(--spacing-lg);
+    background: rgba(255, 215, 0, 0.1);
+    border: 1px solid var(--champ-gold);
+    border-radius: var(--radius-lg);
+    margin: var(--spacing-lg) 0;
 }
 
 .big-text {
-    color: var(--pk-dark);
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     font-weight: bold;
+    color: var(--champ-gold);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 /* HP Bar */
-.hp-bar {
-    height: 12px;
-    border-radius: 6px;
-    background: #e0e0e0;
-    border: 1px solid #ccc;
-}
-
-/* Dark Mode Overrides */
-body.dark {
-    background-color: #1a1a1a;
-    color: #f0f0f0;
-    background-image: url('data:image/svg+xml;utf8,<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><circle cx="2" cy="2" r="2" fill="%23333"/></svg>');
-}
-
-body.dark .panel {
-    background: #2d2d2d;
-    color: #f0f0f0;
-}
-
-body.dark .panel-heading {
-    background: #111;
-    border-bottom-color: var(--pk-violet);
-}
-
-body.dark input[type="text"], body.dark input[type="number"], body.dark select {
+.hp-bar-container {
     background: #333;
-    border-color: #444;
-    color: #fff;
+    height: 8px;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 4px;
 }
 
-body.dark .move-result-group {
-    background: #2d2d2d;
-    border-color: #444;
+.hp-bar-fill {
+    height: 100%;
+    background: var(--success);
+    transition: width 0.3s ease;
 }
 
-body.dark .main-result-group {
-    background: linear-gradient(to right, #2d2d2d, #222);
-    border-left-color: var(--pk-violet);
+/* Utility */
+.hide {
+    display: none !important;
 }
 
-body.dark .big-text {
-    color: #fff;
+.text-center {
+    text-align: center;
 }
 
-/* Specific Pokemon Type Colors (Optional, can be expanded) */
-.type-fire { color: #EE8130; }
-.type-water { color: #6390F0; }
-.type-grass { color: #7AC74C; }
-/* ... etc */
+.flex {
+    display: flex;
+    gap: var(--spacing-sm);
+}
 
-/* Utility Classes */
-.text-center { text-align: center; }
-.mt-2 { margin-top: 1rem; }
-.mb-2 { margin-bottom: 1rem; }
+.flex-col {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
 
-/* Hide unwanted elements */
-.hide { display: none !important; }
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 1.8rem;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--spacing-xs);
+    }
+
+    .stat-row>* {
+        margin-bottom: 4px;
+    }
+
+    .move-row {
+        grid-template-columns: 1fr;
+    }
+}
